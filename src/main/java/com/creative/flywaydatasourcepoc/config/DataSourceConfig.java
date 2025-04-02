@@ -1,4 +1,4 @@
-package com.broadridge.flywaydatasourcepoc.config;
+package com.creative.flywaydatasourcepoc.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;

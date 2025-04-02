@@ -1,4 +1,4 @@
-package com.broadridge.flywaydatasourcepoc.model.two;
+package com.creative.flywaydatasourcepoc.model.two;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

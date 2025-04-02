@@ -1,4 +1,4 @@
-package com.broadridge.flywaydatasourcepoc.config;
+package com.creative.flywaydatasourcepoc.config;
 
 import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Qualifier;

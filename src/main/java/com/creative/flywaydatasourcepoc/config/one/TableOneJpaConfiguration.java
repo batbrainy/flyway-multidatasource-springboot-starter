@@ -1,6 +1,6 @@
-package com.broadridge.flywaydatasourcepoc.config.one;
+package com.creative.flywaydatasourcepoc.config.one;
 
-import com.broadridge.flywaydatasourcepoc.model.one.TableOne;
+import com.creative.flywaydatasourcepoc.model.one.TableOne;
 import java.util.Objects;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-    basePackages = {"com.broadridge.flywaydatasourcepoc.repository.one"},
+    basePackages = {"com.creative.flywaydatasourcepoc.repository.one"},
     entityManagerFactoryRef = "tableOneEntityManagerFactory",
     transactionManagerRef = "tableOneTransactionManager"
 )

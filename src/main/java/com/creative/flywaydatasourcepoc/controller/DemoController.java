@@ -1,10 +1,10 @@
-package com.broadridge.flywaydatasourcepoc.controller;
+package com.creative.flywaydatasourcepoc.controller;
 
 
-import com.broadridge.flywaydatasourcepoc.model.one.TableOne;
-import com.broadridge.flywaydatasourcepoc.model.two.TableTwo;
-import com.broadridge.flywaydatasourcepoc.repository.one.TableOneRepository;
-import com.broadridge.flywaydatasourcepoc.repository.two.TableTwoRepository;
+import com.creative.flywaydatasourcepoc.model.one.TableOne;
+import com.creative.flywaydatasourcepoc.model.two.TableTwo;
+import com.creative.flywaydatasourcepoc.repository.one.TableOneRepository;
+import com.creative.flywaydatasourcepoc.repository.two.TableTwoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
