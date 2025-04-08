@@ -9,8 +9,7 @@ import lombok.Data;
 @Table(name = "table_one")
 public class TableOne {
 
-  @Id
-  private Integer id;
+  @Id private Integer id;
   private String name;
 
   public Integer getId() {
@@ -28,6 +27,4 @@ public class TableOne {
   public void setName(String name) {
     this.name = name;
   }
-
-
 }

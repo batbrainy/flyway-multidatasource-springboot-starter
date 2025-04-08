@@ -19,26 +19,22 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
     basePackages = {"com.creative.flywaydatasourcepoc.repository.one"},
     entityManagerFactoryRef = "tableOneEntityManagerFactory",
-    transactionManagerRef = "tableOneTransactionManager"
-)
+    transactionManagerRef = "tableOneTransactionManager")
 public class TableOneJpaConfiguration {
 
   @Primary
   @Bean
   public LocalContainerEntityManagerFactoryBean tableOneEntityManagerFactory(
-      @Qualifier("dataSource1") DataSource dataSource,
-      EntityManagerFactoryBuilder builder) {
-    return builder
-        .dataSource(dataSource)
-        .packages(TableOne.class)
-        .build();
+      @Qualifier("dataSource1") DataSource dataSource, EntityManagerFactoryBuilder builder) {
+    return builder.dataSource(dataSource).packages(TableOne.class).build();
   }
 
   @Bean
   @Primary
   public PlatformTransactionManager tableOneTransactionManager(
-      @Qualifier("tableOneEntityManagerFactory") LocalContainerEntityManagerFactoryBean tableOneEntityManagerFactory) {
-    return new JpaTransactionManager(Objects.requireNonNull(tableOneEntityManagerFactory.getObject()));
+      @Qualifier("tableOneEntityManagerFactory")
+          LocalContainerEntityManagerFactoryBean tableOneEntityManagerFactory) {
+    return new JpaTransactionManager(
+        Objects.requireNonNull(tableOneEntityManagerFactory.getObject()));
   }
-
 }

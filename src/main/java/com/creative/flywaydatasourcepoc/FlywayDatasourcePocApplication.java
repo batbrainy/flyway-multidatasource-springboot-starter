@@ -9,5 +9,4 @@ public class FlywayDatasourcePocApplication {
   public static void main(String[] args) {
     SpringApplication.run(FlywayDatasourcePocApplication.class, args);
   }
-
 }

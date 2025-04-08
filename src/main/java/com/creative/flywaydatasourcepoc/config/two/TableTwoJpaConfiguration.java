@@ -18,24 +18,20 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(
     basePackages = {"com.creative.flywaydatasourcepoc.repository.two"},
     entityManagerFactoryRef = "tableTwoEntityManagerFactory",
-    transactionManagerRef = "tableTwoTransactionManager"
-)
+    transactionManagerRef = "tableTwoTransactionManager")
 public class TableTwoJpaConfiguration {
 
   @Bean
   public LocalContainerEntityManagerFactoryBean tableTwoEntityManagerFactory(
-      @Qualifier("dataSource2") DataSource dataSource,
-      EntityManagerFactoryBuilder builder) {
-    return builder
-        .dataSource(dataSource)
-        .packages(TableTwo.class)
-        .build();
+      @Qualifier("dataSource2") DataSource dataSource, EntityManagerFactoryBuilder builder) {
+    return builder.dataSource(dataSource).packages(TableTwo.class).build();
   }
 
   @Bean
   public PlatformTransactionManager tableTwoTransactionManager(
-      @Qualifier("tableTwoEntityManagerFactory") LocalContainerEntityManagerFactoryBean tableTwoEntityManagerFactory) {
-    return new JpaTransactionManager(Objects.requireNonNull(tableTwoEntityManagerFactory.getObject()));
+      @Qualifier("tableTwoEntityManagerFactory")
+          LocalContainerEntityManagerFactoryBean tableTwoEntityManagerFactory) {
+    return new JpaTransactionManager(
+        Objects.requireNonNull(tableTwoEntityManagerFactory.getObject()));
   }
-
 }
